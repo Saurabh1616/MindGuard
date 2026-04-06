@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    { "src": "/status", "dest": "app.py" },
+    { "src": "/save-data", "dest": "app.py" },
+    { "src": "/get-sync", "dest": "app.py" },
+    { "src": "/webhook", "dest": "app.py" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
